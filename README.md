@@ -13,7 +13,7 @@ WIP
 Build
 ---
 
-Set 'C:\Windows\System32\drivers\etc'
+Append `C:\Windows\System32\drivers\etc` with `127.0.0.1 keycloak`
 
 The entry in the /etc/hosts file is required on a local machine, as keycloak is available in docker on another host other than from the local browser.
 If you find a better way, a pull request is highly appreciated.
