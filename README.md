@@ -77,6 +77,7 @@ Useful links
 
 - [Spring Security Reference](https://docs.spring.io/spring-security/site/docs/current/reference/html5/#oauth2resourceserver)
 - [JWT Debugger](https://jwt.io/)
+- [Migration Guide for Spring Security 5.2.x](https://github.com/spring-projects/spring-security/wiki/OAuth-2.0-Migration-Guide)
 - ...
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
