@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   keycloak:
     build: ./oidc-idp-keycloak
@@ -7,17 +7,11 @@ services:
     environment:
       - KEYCLOAK_USER=admin
       - KEYCLOAK_PASSWORD=admin
-    networks:
-      - frontend 
-      - backend
   openidc-auth-proxy:
     build: ./oidc-proxy
     ports:
-     - "80:80"
-    networks:
-      - frontend 
-      - backend
-  app1:
+      - "80:80"
+  backend:
     build: ./oidc-backend
     ports:
       - "8090"
@@ -25,9 +19,7 @@ services:
       - SERVER_PORT=8090
       - SECURITY_OAUTH2_RESOURCESERVER_JWT_JWKSETURI=http://keycloak:8080/auth/realms/myapp/protocol/openid-connect/certs
       - SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUERURI=http://keycloak:8080/auth/realms/myapp
-    networks: 
-      - backend
-
-networks:
-  frontend:  
-  backend:
+  frontend:
+    build: ./oidc-frontend
+    ports:
+      - "80"
